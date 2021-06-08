@@ -16,22 +16,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from "../environments/environment";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LayoutComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    CoreModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFireStorageModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LayoutComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		SharedModule,
+		CoreModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireAuthModule,
+		AngularFireStorageModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

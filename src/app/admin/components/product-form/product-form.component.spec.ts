@@ -10,31 +10,31 @@ import { MatSelectModule } from '@angular/material/select';
 import { ProductFormComponent } from './product-form.component';
 
 describe('ProductFormComponent', () => {
-  let component: ProductFormComponent;
-  let fixture: ComponentFixture<ProductFormComponent>;
+	let component: ProductFormComponent;
+	let fixture: ComponentFixture<ProductFormComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProductFormComponent ],
-      imports: [
-        NoopAnimationsModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatCardModule,
-        MatInputModule,
-        MatRadioModule,
-        MatSelectModule,
-      ]
-    }).compileComponents();
-  }));
+	beforeEach(waitForAsync(() => {
+		TestBed.configureTestingModule({
+			declarations: [ ProductFormComponent ],
+			imports: [
+				NoopAnimationsModule,
+				ReactiveFormsModule,
+				MatButtonModule,
+				MatCardModule,
+				MatInputModule,
+				MatRadioModule,
+				MatSelectModule,
+			]
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ProductFormComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should compile', () => {
+		expect(component).toBeTruthy();
+	});
+	});

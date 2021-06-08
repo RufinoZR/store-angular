@@ -10,15 +10,15 @@ import { SharedModule } from "../shared/shared.module";
 import { GroupPipe } from "./pipes/group/group.pipe";
 
 @NgModule({
-  declarations: [
-    OrderComponent,
-    GroupPipe
-  ],
-  imports: [
-    CommonModule,
-    OrderRoutingModule,
-    MaterialModule,
-    SharedModule
-  ]
+	declarations: [
+		OrderComponent,
+		GroupPipe
+	],
+	imports: [
+		CommonModule,
+		OrderRoutingModule,
+		MaterialModule,
+		SharedModule
+	]
 })
 export class OrderModule { }

@@ -6,31 +6,31 @@ import { environment } from '../../../../environments/environment';
 import { ProductModel } from "../../models/product/product.model";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
+	constructor(
+		private http: HttpClient
+	) { }
 
-  getAllProducts() {
-    return this.http.get<ProductModel[]>(`${environment.urlApi}products`);
-  }
+	getAllProducts() {
+		return this.http.get<ProductModel[]>(`${environment.urlApi}products`);
+	}
 
-  getProduct(id: string) {
-    return this.http.get<ProductModel>(`${environment.urlApi}products/${id}`);
-  }
+	getProduct(id: string) {
+		return this.http.get<ProductModel>(`${environment.urlApi}products/${id}`);
+	}
 
-  createProduct(product: ProductModel) {
-    return this.http.post(`${environment.urlApi}products`, product);
-  }
+	createProduct(product: ProductModel) {
+		return this.http.post(`${environment.urlApi}products`, product);
+	}
 
-  updateProduct(id: string, product: Partial<ProductModel>) {
-    return this.http.put(`${environment.urlApi}products/${id}`, product)
-  }
+	updateProduct(id: string, product: Partial<ProductModel>) {
+		return this.http.put(`${environment.urlApi}products/${id}`, product)
+	}
 
-  deleteProduct(id: string) {
-    return this.http.delete(`${environment.urlApi}products/${id}`);
-  }
+	deleteProduct(id: string) {
+		return this.http.delete(`${environment.urlApi}products/${id}`);
+	}
 }

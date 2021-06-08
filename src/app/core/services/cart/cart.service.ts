@@ -4,19 +4,19 @@ import { BehaviorSubject } from "rxjs";
 import {ProductModel} from "../../models/product/product.model";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class CartService {
 
-  private products: ProductModel[] = [];
-  private cart = new BehaviorSubject<ProductModel[]>([]);
+	private products: ProductModel[] = [];
+	private cart = new BehaviorSubject<ProductModel[]>([]);
 
-  cart$ = this.cart.asObservable();
+	cart$ = this.cart.asObservable();
 
-  constructor() { }
+	constructor() { }
 
-  addCart(product: ProductModel) {
-    this.products = [...this.products, product];
-    this.cart.next(this.products);
-  }
+	addCart(product: ProductModel) {
+		this.products = [...this.products, product];
+		this.cart.next(this.products);
+	}
 }

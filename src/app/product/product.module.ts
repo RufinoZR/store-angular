@@ -10,17 +10,17 @@ import { SharedModule } from "../shared/shared.module";
 import { MaterialModule } from "../material/material.module";
 
 @NgModule({
-  declarations: [
-    ProductComponent,
-    ProductDetailComponent,
-    ProductsComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    ProductRoutingModule,
-    MaterialModule
-  ]
+	declarations: [
+		ProductComponent,
+		ProductDetailComponent,
+		ProductsComponent
+	],
+	imports: [
+		CommonModule,
+		SharedModule,
+		ProductRoutingModule,
+		MaterialModule
+	]
 })
 export class ProductModule {
 

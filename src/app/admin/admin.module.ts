@@ -16,12 +16,20 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsListComponent, DashboardComponent, TableComponent, FormProductComponent, ProductEditComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MaterialModule,
-    ReactiveFormsModule,
-  ]
+	declarations: [
+		ProductFormComponent,
+		NavComponent,
+		ProductsListComponent,
+		DashboardComponent,
+		TableComponent,
+		FormProductComponent,
+		ProductEditComponent
+	],
+	imports: [
+		CommonModule,
+		AdminRoutingModule,
+		MaterialModule,
+		ReactiveFormsModule,
+	]
 })
 export class AdminModule { }

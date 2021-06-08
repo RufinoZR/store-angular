@@ -10,16 +10,16 @@ import { MaterialModule } from "../material/material.module";
 import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    ReactiveFormsModule,
-    MaterialModule,
-    SharedModule
-  ]
+	declarations: [
+		LoginComponent,
+		RegisterComponent
+	],
+	imports: [
+		CommonModule,
+		AuthRoutingModule,
+		ReactiveFormsModule,
+		MaterialModule,
+		SharedModule
+	]
 })
 export class AuthModule { }
