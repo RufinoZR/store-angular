@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { map } from "rxjs/operators";
-
-import { CartService } from "../../../core/services/cart/cart.service";
 import {Observable} from "rxjs";
+
+import { CartService } from "@core/services/cart/cart.service";
 
 @Component({
 	selector: 'app-header',

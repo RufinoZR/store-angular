@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {ProductModel} from "../../../core/models/product/product.model";
+
+import { ProductModel } from "@core/models/product/product.model";
 
 @Pipe({
 	name: 'groupOrder'

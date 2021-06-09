@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
-import { ProductsService } from "../../../core/services/products/products.service";
+import { ProductsService } from "@core/services/products/products.service";
 
-import { MyValidators } from "../../../utils/validators";
+import { MyValidators } from "@utils/validators";
 
 @Component({
 	selector: 'app-product-edit',
@@ -49,7 +49,7 @@ export class ProductEditComponent implements OnInit {
 		event.preventDefault();
 		if (this.form.valid) {
 			this.productsService.updateProduct(this.id, this.form.value)
-				.subscribe(product => {
+				.subscribe(() => {
 					this.router.navigate(['admin/products'])
 				});
 		}

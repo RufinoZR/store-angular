@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
-import { MaterialModule } from "../material/material.module";
+import { MaterialModule } from "@meterial/material.module";
 
 @NgModule({
 	declarations: [
