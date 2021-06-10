@@ -36,7 +36,7 @@
 					<mat-form-field>
 						<input matInput placeholder="Digite su correo" [formControl]="emailField" type="email">
 					</mat-form-field>
-					<button mat-raised-button [disabled]="emailField.invalid">Enviar</button>
+					<button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
 				</div>
 			</div>
 		</div>

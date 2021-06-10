@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-
 import { Router, ActivatedRoute, Params } from "@angular/router";
 
 import { ProductsService } from "@core/services/products/products.service";
@@ -14,7 +13,7 @@ import { MyValidators } from "@utils/validators";
 })
 export class ProductEditComponent implements OnInit {
 
-	form: FormGroup | any;
+	form: FormGroup;
 	id = '';
 
 	constructor(
@@ -50,7 +49,7 @@ export class ProductEditComponent implements OnInit {
 		if (this.form.valid) {
 			this.productsService.updateProduct(this.id, this.form.value)
 				.subscribe(() => {
-					this.router.navigate(['admin/products'])
+					this.router.navigate(['admin/products']).then()
 				});
 		}
 		console.log(this.form.value);

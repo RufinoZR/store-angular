@@ -11,7 +11,7 @@ import { AuthService } from "@core/services/auth/auth.service";
 })
 export class RegisterComponent {
 
-	form: FormGroup | any;
+	form: FormGroup;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -27,7 +27,7 @@ export class RegisterComponent {
 			const value = this.form.value;
 			this.authService.createUser(value.email, value.password)
 				.then(() => {
-					this.router.navigate(['/auth/login']);
+					this.router.navigate(['/auth/login']).then();
 				});
 		}
 	}

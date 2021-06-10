@@ -10,7 +10,7 @@ import { AuthService } from "@core/services/auth/auth.service";
 	styleUrls: ['./login.component.sass']
 })
 export class LoginComponent {
-	form: FormGroup | any;
+	form: FormGroup;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -27,7 +27,7 @@ export class LoginComponent {
 			const value = this.form.value;
 			this.authService.login(value.email, value.password)
 				.then(() => {
-					this.router.navigate(['admin'])
+					this.router.navigate(['admin']).then()
 				});
 		}
 		console.log(this.form.value);
@@ -40,4 +40,10 @@ export class LoginComponent {
 		});
 	}
 
+	loginRest() {
+		this.authService.loginRestApi('rufino@rufin.com', '123456')
+			.subscribe(data => {
+				console.log(data);
+			});
+	}
 }

@@ -7,7 +7,7 @@ import Swiper from 'swiper';
 	styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements AfterViewInit{
-	mySwiper: Swiper | undefined;
+	mySwiper: Swiper;
 
 	constructor() { }
 

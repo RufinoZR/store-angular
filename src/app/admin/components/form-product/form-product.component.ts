@@ -16,8 +16,8 @@ import { ProductsService } from "@core/services/products/products.service";
 	styleUrls: ['./form-product.component.sass']
 })
 export class FormProductComponent {
-	form: FormGroup | any;
-	image$: Observable<any> | any;
+	form: FormGroup;
+	image$: Observable<any>;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -60,6 +60,7 @@ export class FormProductComponent {
 				finalize(() => {
 					this.image$ = fileRef.getDownloadURL();
 					this.image$.subscribe((url: string) => {
+						// @ts-ignore
 						this.form.get('image').setValue(url);
 					})
 				})

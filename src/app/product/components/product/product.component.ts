@@ -10,7 +10,7 @@ import { ProductModel } from "@core/models/product/product.model";
 	styleUrls: ['./product.component.sass']
 })
 export class ProductComponent {
-	@Input() product = {} as ProductModel;
+	@Input() product: ProductModel;
 	@Output() productClicked: EventEmitter<any> = new EventEmitter();
 
 	constructor(
