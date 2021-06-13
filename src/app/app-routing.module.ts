@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
-import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from "./layout/layout.component";
+
+import { PreloadService } from "@core/services/preload/preload.service";
+
 import {AdminGuard} from "./admin.guard";
 
 const routes: Routes = [
@@ -16,11 +19,13 @@ const routes: Routes = [
 			},
 			{
 				path: 'home',
-				loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+				loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+				data: { preload: true }
 			},
 			{
 				path: 'products',
-				loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+				loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
+				data: { preload: true }
 			},
 			{
 				path: 'order',
@@ -49,7 +54,8 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes, {
-		preloadingStrategy: PreloadAllModules
+		// preloadingStrategy: PreloadAllModules // carga todos los componentes cuando ya esta disponible para descargar
+		preloadingStrategy: PreloadService // es una estrategia
 	})],
 	exports: [RouterModule]
 })

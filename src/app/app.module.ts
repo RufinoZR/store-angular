@@ -9,6 +9,7 @@ import * as Sentry from '@sentry/browser';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "@shared/shared.module";
 import { CoreModule } from "@core/core.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -50,7 +51,13 @@ if (environment.production) {
 		HttpClientModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireAuthModule,
-		AngularFireStorageModule
+		AngularFireStorageModule,
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			// Register the ServiceWorker as soon as the app is stable
+			// or after 30 seconds (whichever comes first).
+			registrationStrategy: 'registerWhenStable:30000'
+		})
 	],
 	providers: [{
 		provide: HTTP_INTERCEPTORS,
