@@ -43,7 +43,7 @@ if (environment.production) {
 		LayoutComponent
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		AppRoutingModule,
 		SharedModule,
 		CoreModule,

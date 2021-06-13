@@ -54,9 +54,11 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes, {
-		// preloadingStrategy: PreloadAllModules // carga todos los componentes cuando ya esta disponible para descargar
-		preloadingStrategy: PreloadService // es una estrategia
-	})],
+    // preloadingStrategy: PreloadAllModules // carga todos los componentes cuando ya esta disponible para descargar
+    preloadingStrategy: PreloadService // es una estrategia
+    ,
+    initialNavigation: 'enabled'
+})],
 	exports: [RouterModule]
 })
 export class AppRoutingModule { }
