@@ -7,15 +7,18 @@ import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
 import { MaterialModule } from "@meterial/material.module";
+import { FibonacciPipe } from './pipes/fibonacci/fibonacci.pipe';
 
 @NgModule({
 	declarations: [
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		FibonacciPipe
 	],
 	exports: [
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		FibonacciPipe
 	],
 	imports: [
 		CommonModule,
