@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { map } from "rxjs/operators";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 import { CartService } from "@core/services/cart/cart.service";
 
@@ -10,7 +10,7 @@ import { CartService } from "@core/services/cart/cart.service";
 	styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent {
-
+	installEvent: any;
 	total$: Observable<number>;
 
 	constructor(
@@ -20,6 +20,22 @@ export class HeaderComponent {
 			.pipe(
 				map(products => products.length)
 			);
+	}
+	@HostListener('window:beforeinstallprompt', ['$event'])
+	onBeforeInstallPrompt(e: Event) {
+		console.log(e);
+		e.preventDefault();
+		this.installEvent = e;
+	}
+
+	installByUser() {
+		if (this.installEvent) {
+			this.installEvent.prompt();
+			this.installEvent.userChoice
+				.then((rta: any) => {
+					console.log(rta, "mmm...");
+				});
+		}
 	}
 
 }

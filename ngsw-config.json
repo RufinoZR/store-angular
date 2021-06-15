@@ -26,5 +26,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["https://images.pexels.com/photos/**", "https://platzi-store.herokuapp.com/**", "https://randomuser.me/api/?results=2"],
+      "cacheConfig": {
+        "maxSize": 3,
+        "maxAge": "3d2s",
+        "strategy": "freshness",
+        "timeout": "3s"
+      }
+    }
   ]
 }

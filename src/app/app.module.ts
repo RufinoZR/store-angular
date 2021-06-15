@@ -4,6 +4,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireMessagingModule } from "@angular/fire/messaging";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import * as Sentry from '@sentry/browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +54,8 @@ if (environment.production) {
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireAuthModule,
 		AngularFireStorageModule,
+		AngularFireMessagingModule,
+		AngularFirestoreModule,
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,
 			// Register the ServiceWorker as soon as the app is stable

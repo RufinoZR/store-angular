@@ -7,6 +7,7 @@ export const environment = {
 		projectId: 'practices-f3275',
 		storageBucket: 'practices-f3275.appspot.com',
 		messagingSenderId: '560665895624',
-		appId: '1:560665895624:web:dbf9e98b5f73da2492fbfd'
+		appId: '1:560665895624:web:dbf9e98b5f73da2492fbfd',
+		measurementId: 'G-ML74T0PXJW'
 	}
 };
