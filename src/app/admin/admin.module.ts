@@ -13,6 +13,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TableComponent } from './components/table/table.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { BasicFormComponent } from './components/basic-form/basic-form.component';
+import { SharedModule } from "@shared/shared.module";
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 		DashboardComponent,
 		TableComponent,
 		FormProductComponent,
-		ProductEditComponent
+		ProductEditComponent,
+		BasicFormComponent
 	],
 	imports: [
 		CommonModule,
 		AdminRoutingModule,
 		MaterialModule,
 		ReactiveFormsModule,
+		SharedModule,
 	]
 })
 export class AdminModule { }

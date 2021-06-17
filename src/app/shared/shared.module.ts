@@ -8,17 +8,20 @@ import { FooterComponent } from "./components/footer/footer.component";
 
 import { MaterialModule } from "@meterial/material.module";
 import { FibonacciPipe } from './pipes/fibonacci/fibonacci.pipe';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 @NgModule({
 	declarations: [
 		HeaderComponent,
 		FooterComponent,
-		FibonacciPipe
+		FibonacciPipe,
+		StepperComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		FibonacciPipe
+		FibonacciPipe,
+		StepperComponent
 	],
 	imports: [
 		CommonModule,

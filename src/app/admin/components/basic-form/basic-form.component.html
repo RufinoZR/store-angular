@@ -1,0 +1,194 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+	<div formGroupName="fullName">
+		<mat-form-field appearance="fill">
+			<mat-label>{{ nameField?.value}}</mat-label>
+			<input matInput type="text" formControlName="name">
+			<mat-icon matSuffix *ngIf="nameField?.valid">done</mat-icon>
+			<mat-icon matSuffix *ngIf="nameField?.invalid">close</mat-icon>
+			<mat-error *ngIf="nameField?.touched && nameField?.invalid">
+				<ng-container *ngIf="nameField?.hasError('required')">El campo nombre es requerido</ng-container>
+				<ng-container *ngIf="nameField?.hasError('maxlength')">El campo nombre no puede tener más de 10 caracteres</ng-container>
+			</mat-error>
+		</mat-form-field>
+<!--		<p>-->
+<!--			{{ nameField?.value }}-->
+<!--			<input-->
+<!--				[class.is-valid]="nameField?.touched && nameField?.valid"-->
+<!--				[class.is-invalid]="nameField?.touched && nameField?.invalid"-->
+<!--				type="text"-->
+<!--				formControlName="name"-->
+<!--			/>-->
+<!--			<button [disabled]="nameField?.invalid" (click)="getNameValue()">Get value</button>-->
+<!--			&lt;!&ndash;	<code>&ndash;&gt;-->
+<!--			&lt;!&ndash;		<pre>{{ nameField? | json }}</pre>&ndash;&gt;-->
+<!--			&lt;!&ndash;	</code>&ndash;&gt;-->
+<!--		</p>-->
+	</div>
+<!--	<p>-->
+<!--		{{ nameField?.value }}-->
+<!--		<input-->
+<!--			[class.is-valid]="nameField?.touched && nameField?.valid"-->
+<!--			[class.is-invalid]="nameField?.touched && nameField?.invalid"-->
+<!--			type="text"-->
+<!--			formControlName="name"-->
+<!--		/>-->
+<!--		<button [disabled]="nameField?.invalid" (click)="getNameValue()">Get value</button>-->
+<!--		&lt;!&ndash;	<code>&ndash;&gt;-->
+<!--		&lt;!&ndash;		<pre>{{ nameField? | json }}</pre>&ndash;&gt;-->
+<!--		&lt;!&ndash;	</code>&ndash;&gt;-->
+<!--	</p>-->
+<!--	<section class="messages" [class.active]="nameField?.touched && nameField?.invalid">-->
+<!--		<p>-->
+<!--			<strong *ngIf="nameField?.touched && nameField?.hasError('required')">Este compo es requerido</strong>-->
+<!--		</p>-->
+<!--	</section>-->
+	<p>
+		Email: {{ emailField?.value }}
+		<input type="email" formControlName="email"/>
+	</p>
+	
+	<p>
+		Phone: {{ phoneField?.value }}
+		<input type="tel" formControlName="phone"/>
+	</p>
+	
+	<p>
+		Color: {{ colorField?.value }}
+		<input type="color" formControlName="color"/>
+	</p>
+	
+	<p>
+		Date: {{ dateField?.value }}
+		<input type="date" formControlName="date"/>
+	</p>
+	
+	<p>
+		Age: {{ ageField?.value }}
+		<input type="number" formControlName="age"/>
+	</p>
+	
+	<p>
+		Category: {{ categoryField?.value }}
+		<select name="category" id="1" formControlName="category">
+			<option value="cat1">Category 1</option>
+			<option value="cat2">Category 2</option>
+			<option value="cat3">Category 3</option>
+			<option value="cat4">Category 4</option>
+			<option value="cat5">Category 5</option>
+			<option value="cat6">Category 6</option>
+		</select>
+	</p>
+	
+	<p>
+		Tag: {{ tagField?.value }}
+		<select name="tag" id="2" formControlName="tag" multiple >
+			<option value="tag1">Tag 1</option>
+			<option value="tag2">Tag 2</option>
+			<option value="tag3">Tag 3</option>
+			<option value="tag4">Tag 4</option>
+			<option value="tag5">Tag 5</option>
+			<option value="tag6">Tag 6</option>
+		</select>
+	</p>
+	
+	<p>
+		Agree: {{ agreeField?.value }}
+		<input type="checkbox" formControlName="agree"/>
+	</p>
+	
+	<p>
+		Gender: {{ genderField?.value }}
+		<label>
+			<input name="gender" type="radio" value="male" formControlName="gender"/>
+			Male
+		</label>
+		<label>
+			<input name="gender" type="radio" value="female" formControlName="gender"/>
+			Female
+		</label>
+	</p>
+	<button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+<!--<p>-->
+<!--	{{ nameField.value }}-->
+<!--	<input-->
+<!--		[class.is-valid]="nameField.touched && nameField.valid"-->
+<!--		[class.is-invalid]="nameField.touched && nameField.invalid"-->
+<!--		type="text"-->
+<!--		[formControl]="nameField"-->
+<!--	/>-->
+<!--	<button [disabled]="nameField.invalid" (click)="getNameValue()">Get value</button>-->
+<!--&lt;!&ndash;	<code>&ndash;&gt;-->
+<!--&lt;!&ndash;		<pre>{{ nameField | json }}</pre>&ndash;&gt;-->
+<!--&lt;!&ndash;	</code>&ndash;&gt;-->
+<!--</p>-->
+<!--<section class="messages" [class.active]="nameField.touched && nameField.invalid">-->
+<!--	<p>-->
+<!--		<strong *ngIf="nameField.touched && nameField.hasError('required')">Este compo es requerido</strong>-->
+<!--	</p>-->
+<!--</section>-->
+<!--<p>-->
+<!--	Email: {{ emailField.value }}-->
+<!--	<input type="email" [formControl]="emailField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Phone: {{ phoneField.value }}-->
+<!--	<input type="tel" [formControl]="phoneField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Color: {{ colorField.value }}-->
+<!--	<input type="color" [formControl]="colorField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Date: {{ dateField.value }}-->
+<!--	<input type="date" [formControl]="dateField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Age: {{ ageField.value }}-->
+<!--	<input type="number" [formControl]="ageField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Category: {{ categoryField.value }}-->
+<!--	<select name="category" id="1" [formControl]="categoryField">-->
+<!--		<option value="cat1">Category 1</option>-->
+<!--		<option value="cat2">Category 2</option>-->
+<!--		<option value="cat3">Category 3</option>-->
+<!--		<option value="cat4">Category 4</option>-->
+<!--		<option value="cat5">Category 5</option>-->
+<!--		<option value="cat6">Category 6</option>-->
+<!--	</select>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Tag: {{ tagField.value }}-->
+<!--	<select name="tag" id="2" [formControl]="tagField" multiple >-->
+<!--		<option value="tag1">Tag 1</option>-->
+<!--		<option value="tag2">Tag 2</option>-->
+<!--		<option value="tag3">Tag 3</option>-->
+<!--		<option value="tag4">Tag 4</option>-->
+<!--		<option value="tag5">Tag 5</option>-->
+<!--		<option value="tag6">Tag 6</option>-->
+<!--	</select>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Agree: {{ agreeField.value }}-->
+<!--	<input type="checkbox" [formControl]="agreeField"/>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--	Gender: {{ genderField.value }}-->
+<!--	<label>-->
+<!--		<input name="gender" type="radio" value="male" [formControl]="genderField"/>-->
+<!--		Male-->
+<!--	</label>-->
+<!--	<label>-->
+<!--		<input name="gender" type="radio" value="female" [formControl]="genderField"/>-->
+<!--		Female-->
+<!--	</label>-->
+<!--</p>-->

@@ -20,6 +20,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatChipsModule } from "@angular/material/chips";
+import { MatDatepickerModule } from "@angular/material/datepicker";
 
 @NgModule({
 	declarations: [],
@@ -44,6 +45,7 @@ import { MatChipsModule } from "@angular/material/chips";
 		MatFormFieldModule,
 		MatStepperModule,
 		MatChipsModule,
+		MatDatepickerModule,
 	],
 	exports: [
 		MatButtonModule,
@@ -65,6 +67,7 @@ import { MatChipsModule } from "@angular/material/chips";
 		MatFormFieldModule,
 		MatStepperModule,
 		MatChipsModule,
+		MatDatepickerModule,
 	]
 })
 export class MaterialModule { }

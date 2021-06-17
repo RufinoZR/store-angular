@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from "@angular/forms";
 import { OrderComponent } from './components/order/order.component';
 
 import { OrderRoutingModule } from './order-routing.module';
@@ -18,7 +18,8 @@ import { GroupPipe } from "./pipes/group/group.pipe";
 		CommonModule,
 		OrderRoutingModule,
 		MaterialModule,
-		SharedModule
+		SharedModule,
+		ReactiveFormsModule
 	]
 })
 export class OrderModule { }

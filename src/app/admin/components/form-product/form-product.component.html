@@ -5,11 +5,11 @@
 		</mat-card-header>
 		<mat-card-content>
 			<div class="row">
-				<div class="col-xs">
+<!--				<div class="col-xs">
 					<mat-form-field>
 						<input placeholder="Id" formControlName="id" matInput type="text">
 					</mat-form-field>
-				</div>
+				</div>-->
 				<div class="col-xs">
 					<mat-form-field>
 						<input placeholder="title" formControlName="title" matInput type="text">
@@ -21,15 +21,28 @@
 						<mat-error *ngIf="priceField?.hasError('price_invalid')">Precio no valido</mat-error>
 					</mat-form-field>
 				</div>
-			</div>
-			<div class="col-xs">
-				<mat-form-field>
-					<textarea placeholder="description" formControlName="description" matInput></textarea>
-				</mat-form-field>
-			</div>
-			<div class="col-xs">
-				<img *ngIf="image$ | async as image" [src]="image" alt="">
-				<input type="file" (change)="uploadFile($event)">
+				<div class="col-xs">
+					<mat-form-field>
+						<mat-label>Categorias</mat-label>
+						<mat-select formControlName="category_id">
+							<mat-option [value]="cat._id" *ngFor="let cat of categories$ | async">{{cat.name}}</mat-option>
+						</mat-select>
+<!--						<input placeholder="Categoria" formControlName="category_id" matInput type="text">-->
+<!--						<mat-error *ngIf="priceField?.hasError('price_invalid')">Precio no valido</mat-error>-->
+					</mat-form-field>
+				</div>
+				<div class="col-xs">
+					<app-stepper formControlName="stock"></app-stepper>
+				</div>
+				<div class="col-xs">
+					<mat-form-field>
+						<textarea placeholder="description" formControlName="description" matInput></textarea>
+					</mat-form-field>
+				</div>
+				<div class="col-xs">
+					<img *ngIf="image$ | async as image" [src]="image" alt="">
+					<input type="file" (change)="uploadFile($event)">
+				</div>
 			</div>
 		</mat-card-content>
 		<mat-card-actions>
